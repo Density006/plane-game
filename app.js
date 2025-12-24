@@ -12,13 +12,14 @@ const connectionHint = document.getElementById("connectionHint");
 const goldDisplay = document.getElementById("goldDisplay");
 const planeDisplay = document.getElementById("planeDisplay");
 const healthDisplay = document.getElementById("healthDisplay");
+const damageDisplay = document.getElementById("damageDisplay");
 const upgradeBtn = document.getElementById("upgradeBtn");
 
 const PLANE_LEVELS = [
-  { name: "Scout", speed: 2.8, armor: 100, damage: 14, cost: 0, cooldown: 360 },
-  { name: "Striker", speed: 3.2, armor: 125, damage: 18, cost: 100, cooldown: 320 },
-  { name: "Falcon", speed: 3.6, armor: 150, damage: 22, cost: 180, cooldown: 280 },
-  { name: "Warden", speed: 4.1, armor: 180, damage: 28, cost: 260, cooldown: 250 },
+  { name: "Scout", speed: 2.8, armor: 100, damage: 14, cost: 0, cooldown: 220 },
+  { name: "Striker", speed: 3.2, armor: 125, damage: 18, cost: 100, cooldown: 200 },
+  { name: "Falcon", speed: 3.6, armor: 150, damage: 22, cost: 180, cooldown: 180 },
+  { name: "Warden", speed: 4.1, armor: 180, damage: 28, cost: 260, cooldown: 160 },
 ];
 
 const STAR_COUNT = 70;
@@ -76,6 +77,9 @@ function updateUi() {
   const level = PLANE_LEVELS[localPlayer.level];
   planeDisplay.textContent = `Plane: ${level.name}`;
   healthDisplay.textContent = `Health: ${Math.max(localPlayer.health, 0)}`;
+  if (damageDisplay) {
+    damageDisplay.textContent = `Missile Damage: ${level.damage}`;
+  }
   const nextLevel = PLANE_LEVELS[localPlayer.level + 1];
   if (nextLevel) {
     upgradeBtn.textContent = `Upgrade Plane (Cost: ${nextLevel.cost})`;
