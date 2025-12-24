@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Skirmish</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div>
+          <h1>Sky Skirmish</h1>
+          <p>WASD to fly, Space to fire missiles. Defeat enemy aircraft to earn gold and upgrade planes.</p>
+        </div>
+        <div class="status" id="connectionStatus">Offline</div>
+      </header>
+
+      <section class="panel">
+        <div class="panel__block">
+          <h2>Lobby</h2>
+          <div class="lobby-controls">
+            <button id="hostBtn">Host Lobby</button>
+            <button id="joinBtn">Join Lobby</button>
+          </div>
+          <label class="field">
+            <span>Lobby Code</span>
+            <textarea id="lobbyCode" placeholder="Paste or share the lobby code..."></textarea>
+          </label>
+          <label class="field">
+            <span>Response Code</span>
+            <textarea id="responseCode" placeholder="Paste the response code here..."></textarea>
+          </label>
+          <div class="lobby-actions">
+            <button id="createResponseBtn">Create Response</button>
+            <button id="applyResponseBtn">Apply Response</button>
+          </div>
+        </div>
+        <div class="panel__block">
+          <h2>Hangar</h2>
+          <div class="hangar">
+            <div>
+              <div class="stat" id="goldDisplay">Gold: 0</div>
+              <div class="stat" id="planeDisplay">Plane: Scout</div>
+              <div class="stat" id="healthDisplay">Health: 100</div>
+            </div>
+            <div>
+              <button id="upgradeBtn">Upgrade Plane (Cost: 100)</button>
+              <p class="hint">Upgrades improve speed, armor, and missile damage.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-area">
+        <canvas id="gameCanvas" width="960" height="600"></canvas>
+        <div class="legend">
+          <span class="legend__item"><span class="legend__dot legend__dot--you"></span>You</span>
+          <span class="legend__item"><span class="legend__dot legend__dot--enemy"></span>Enemy</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel__block">
+          <h2>How it works</h2>
+          <ol>
+            <li>Host a lobby to generate a lobby code.</li>
+            <li>Share the code with a friend. They paste it and click “Create Response”.</li>
+            <li>Paste their response code and apply it to finish the connection.</li>
+          </ol>
+          <p class="hint">This peer-to-peer flow works on static hosting like Vercel.</p>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
