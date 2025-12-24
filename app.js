@@ -16,10 +16,10 @@ const damageDisplay = document.getElementById("damageDisplay");
 const upgradeBtn = document.getElementById("upgradeBtn");
 
 const PLANE_LEVELS = [
-  { name: "Scout", speed: 2.8, armor: 100, damage: 14, cost: 0, cooldown: 220 },
-  { name: "Striker", speed: 3.2, armor: 125, damage: 18, cost: 100, cooldown: 200 },
-  { name: "Falcon", speed: 3.6, armor: 150, damage: 22, cost: 180, cooldown: 180 },
-  { name: "Warden", speed: 4.1, armor: 180, damage: 28, cost: 260, cooldown: 160 },
+  { name: "Scout", speed: 2.8, armor: 100, damage: 18, cost: 0, cooldown: 160 },
+  { name: "Striker", speed: 3.2, armor: 125, damage: 24, cost: 100, cooldown: 145 },
+  { name: "Falcon", speed: 3.6, armor: 150, damage: 30, cost: 180, cooldown: 130 },
+  { name: "Warden", speed: 4.1, armor: 180, damage: 38, cost: 260, cooldown: 120 },
 ];
 
 const STAR_COUNT = 70;
